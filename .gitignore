@@ -16,3 +16,4 @@ build/
 bin/
 hrms_C001_backup*
 excel/
+logs/
