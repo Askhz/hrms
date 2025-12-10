@@ -158,7 +158,7 @@ func getModels() []interface{} {
 		&model.Notification{},
 		&model.BranchCompany{},
 		&model.Salary{},
-		&model.SalaryRecord{},
+		// &model.SalaryRecord{},  // sqlite 不支持 float64 类型字段迁移
 		&model.Recruitment{},
 		&model.Candidate{},
 		&model.Example{},

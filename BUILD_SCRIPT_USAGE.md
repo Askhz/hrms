@@ -2,7 +2,7 @@
 
 ## 概述
 
-`build.sh` 是 HRMS 项目的构建脚本，提供了完整的项目构建、测试、部署等功能。该脚本使用纯 bash 实现，无需额外依赖。
+`build.sh` 是 HRMS 项目的构建脚本，提供了完整的项目构建、部署等功能。该脚本使用纯 bash 实现，无需额外依赖。
 
 ## 使用方法
 
@@ -22,10 +22,6 @@ bash build.sh [命令] [选项]
 - `bash build.sh run` - 运行开发服务器
 - `bash build.sh run-prod` - 运行生产环境服务器
 - `bash build.sh run-self` - 运行自定义配置服务器
-
-#### 测试相关
-- `bash build.sh test` - 运行所有测试
-- `bash build.sh test-pkg <包名>` - 运行指定包的测试
 
 #### 代码质量
 - `bash build.sh fmt` - 格式化代码
@@ -81,9 +77,6 @@ ENV=prod PORT=9090 bash build.sh run-prod
 
 # 迁移指定数据库
 DB=hrms_C001 bash build.sh migrate-db
-
-# 测试指定包
-PKG=handler bash build.sh test-pkg
 ```
 
 ## 特性

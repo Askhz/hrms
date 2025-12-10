@@ -64,8 +64,6 @@ show_help() {
     echo "  run-dev        - 运行开发环境服务器"
     echo "  run-prod       - 运行生产环境服务器"
     echo "  run-self       - 运行自定义配置服务器"
-    echo "  test           - 运行测试"
-    echo "  test-pkg PKG   - 运行指定包的测试"
     echo "  clean          - 清理构建文件"
     echo "  deps           - 下载依赖"
     echo "  deps-update    - 更新依赖"
@@ -151,24 +149,6 @@ run_prod() {
 run_self() {
     log_info "启动自定义配置服务器..."
     HRMS_ENV=self ${GO} run main.go
-}
-
-# 运行测试
-run_test() {
-    log_info "运行测试..."
-    ${GO} test -v ./...
-}
-
-# 运行指定包的测试
-run_test_pkg() {
-    local pkg=$1
-    if [ -z "$pkg" ]; then
-        log_error "请指定包名称"
-        echo "用法: $0 test-pkg <包名>"
-        exit 1
-    fi
-    log_info "运行 ${pkg} 包的测试..."
-    ${GO} test -v ./${pkg}
 }
 
 # 清理构建文件
@@ -434,12 +414,6 @@ main() {
             ;;
         "run-self")
             run_self
-            ;;
-        "test")
-            run_test
-            ;;
-        "test-pkg")
-            run_test_pkg "$2"
             ;;
         "clean")
             clean
