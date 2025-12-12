@@ -1,0 +1,61 @@
+{
+  "classifyName": "Applications",
+  "confidence": "高",
+  "techStack": ["Go", "Gin", "GORM", "SQLite", "MySQL", "HTML", "JavaScript", "Layui", "jQuery", "ECharts"],
+  "projectScale": "中型",
+  "entrypoints": ["main.go", "/static", "/views"],
+  "modules": [
+    { 
+      "name": "用户认证与权限管理",
+      "relatedSources": ["handler/account.go", "model/authority.go", "service/authority.go", "resource/resource.go"]
+    },
+    { 
+      "name": "员工管理模块",
+      "relatedSources": ["handler/staff.go", "model/staff.go", "service/biz.go"]
+    },
+    { 
+      "name": "部门与职级管理",
+      "relatedSources": ["handler/department.go", "handler/rank.go", "model/department.go", "model/rank.go"]
+    },
+    { 
+      "name": "考勤管理模块",
+      "relatedSources": ["handler/attend.go", "model/attendance.go", "service/attend_record.go"]
+    },
+    { 
+      "name": "薪资管理模块",
+      "relatedSources": ["handler/salary.go", "model/salary.go", "service/salary.go", "service/salary_record.go"]
+    },
+    { 
+      "name": "招聘与候选人管理",
+      "relatedSources": ["handler/recruitment.go", "handler/candidate.go", "model/recruitment.go", "model/candidate.go"]
+    },
+    { 
+      "name": "通知管理模块",
+      "relatedSources": ["handler/notification.go", "model/notification.go", "service/notification.go"]
+    },
+    { 
+      "name": "考试管理模块",
+      "relatedSources": ["handler/example.go", "model/example.go", "service/example.go"]
+    },
+    { 
+      "name": "数据库迁移工具",
+      "relatedSources": ["cmd/migrate/main.go", "MIGRATION_GUIDE.md", "build.sh"]
+    },
+    { 
+      "name": "前端界面",
+      "relatedSources": ["views/", "static/", "handler/template.go"]
+    }
+  ],
+  "complexityLevel": "中",
+  "recommendedStrategy": "标准",
+  "evidence": [
+    "项目采用Go语言的Gin框架作为后端服务器，GORM作为ORM工具",
+    "支持MySQL和SQLite双数据库，具备分公司数据隔离功能",
+    "前端使用Layui框架构建管理界面，包含完整的CRUD操作",
+    "实现基于角色的权限控制系统（supersys/sys/normal）",
+    "包含完整的人力资源管理功能：员工、部门、考勤、薪资、招聘等",
+    "提供数据库迁移工具和多环境配置支持",
+    "项目代码结构清晰，采用MVC分层架构设计"
+  ],
+  "summary": "HRMS是一个基于Go、Gin和GORM构建的完整人力资源管理系统，提供员工管理、考勤管理、薪资管理、招聘管理等功能。系统支持多分公司数据隔离，实现基于角色的权限控制，前端使用Layui框架构建用户界面。项目采用MVC架构设计，代码结构清晰，包含完整的数据库迁移工具和多环境配置支持。"
+}
